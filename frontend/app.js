@@ -21954,8 +21954,8 @@ var import_path = __toESM(require("path"));
 var app = (0, import_express.default)();
 var port = 3e3;
 app.use(import_express.default.static(import_path.default.join(__dirname, "public")));
-var app_default = app.listen(port, () => {
-  console.log(`App is running at http://localhost:${port}`);
+var app_default = app.listen(port, "0.0.0.0", () => {
+  console.log(`App is running at http://0.0.0.0:${port}`);
 });
 /*! Bundled license information:
 
