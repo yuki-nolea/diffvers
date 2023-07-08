@@ -59,3 +59,11 @@ mysql> quit;
 # cd ./backend
 # yarn run watch
 ```
+アプリケーション実行後、Webブラウザから"`http://<IP address>:3000`"へアクセス
+
+# Production build
+
+```
+# cd ./backend
+# yarn run prod
+```
