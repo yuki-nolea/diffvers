@@ -45,9 +45,9 @@
 
 mysql> create database diffvers character set utf8mb4 collate utf8mb4_bin;
 
-mysql> create user diffvers@localhost identified by '********';
+mysql> create user diffvers@"127.0.0.1" identified by '********';
 
-mysql> grant all privileges on diffvers.* to diffvers@localhost;
+mysql> grant all privileges on diffvers.* to diffvers@"127.0.0.1";
 
 mysql> quit;
 
