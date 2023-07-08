@@ -7,6 +7,6 @@ const port = 3000
 
 app.use(express.static(path.join(__dirname, "public")))
 
-export default app.listen(port, "0.0.0.0", () => {
-    console.log(`App is running at http://0.0.0.0:${port}`)
+export default app.listen(port, () => {
+    console.log(`App is running at http://localhost:${port}`)
 })
