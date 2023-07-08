@@ -1,0 +1,14 @@
+{
+  "name": "diffservs-backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/yuki-nolea/diffvers",
+  "author": "yuki-nolea",
+  "license": "MIT",
+  "scripts": {
+    "watch": "nodemon"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
