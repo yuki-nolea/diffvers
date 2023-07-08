@@ -7,6 +7,7 @@ const options = {
   bundle: true,
   target: 'es2016',
   platform: 'node',
+  minify: true,
   outdir: path.resolve(__dirname, '../frontend'),
   tsconfig: path.resolve(__dirname, 'tsconfig.json'),
 }
