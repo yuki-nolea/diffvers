@@ -1,13 +1,6 @@
 # diffvers
 
-# Running the app
-
-```
-# cd ./backend
-# yarn run watch
-```
-
-# Clone the app
+# Cloning the app
 1. github からリポジトリをクローン
 ```
 # git clone https://github.com/yuki-nolea/diffvers.git
@@ -42,4 +35,27 @@
 6. dev ブランチに切り替える
 ```
 # git checkout dev
+```
+
+
+# Running the app
+1. 初期データベースの作成
+```
+# mysql -u root -p
+
+mysql> create database diffvers character set utf8mb4 collate utf8mb4_bin;
+
+mysql> create user diffvers@localhost identified by '********';
+
+mysql> grant all privileges on diffvers.* to diffvers@localhost;
+
+mysql> quit;
+
+# cat ./create.sql | mysql --default-character-set=utf8mb4 -udiffvers -p diffvers
+```
+
+2. アプリケーションの実行
+```
+# cd ./backend
+# yarn run watch
 ```
