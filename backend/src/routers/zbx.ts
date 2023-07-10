@@ -3,7 +3,7 @@ import tr from '@/model/transaction'
 
 const router = express.Router();
 
-router.get('/zbx', async (req: any, res: any) => 
+router.get('/zbx/all', async (req: any, res: any) => 
 {
   const result = await tr.query("select * from parameters", null);
 
@@ -12,5 +12,15 @@ router.get('/zbx', async (req: any, res: any) =>
   res.json(result);
 })
 
+
+router.get('/zbx', async (req: any, res: any) => 
+{
+  console.log(req.query);
+  const result = await tr.query("select * from parameters", null);
+
+  //console.log(result);
+
+  res.json(result);
+})
 
 export default router
