@@ -24,7 +24,7 @@ export class ZbxParam
   constructor({id, process, ver, param_name, mandatory, val_range, val_default, param_desc}: ZbxParam)
   {
     console.log("constructor: " + id + " " + process);
-    
+
     this.id = id;
     this.process = process;
     this.ver = ver;
@@ -36,6 +36,11 @@ export class ZbxParam
   }
 
 
-  public is_diff(p : ZbxParam) {
+  public is_diff(o : ZbxParam)
+  {
+    const j1 = JSON.stringify(this);
+    const j2 = JSON.stringify(o);
+
+    return j1 == j2;
   }
 }

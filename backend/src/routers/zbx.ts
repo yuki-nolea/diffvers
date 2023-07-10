@@ -28,8 +28,6 @@ router.get('/zbx', async (req: any, res: any) =>
       v1_params.push(new ZbxParam(item as ZbxParam))
       console.log(JSON.stringify(v1_params[v1_params.length-1]))
     }
-    
-  
   }
 
   if(v2)
