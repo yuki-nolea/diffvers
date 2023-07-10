@@ -15,8 +15,18 @@ router.get('/zbx/all', async (req: any, res: any) =>
 
 router.get('/zbx', async (req: any, res: any) => 
 {
-  console.log(req.query);
-  const result = await tr.query("select * from parameters", null);
+  const {v1, v2} = req.query;
+
+  if(v1)
+  {
+    const result = await tr.query("select * from parameters where ver=?", [v1]);
+
+  }
+
+  if(v2)
+  {
+
+  }
 
   //console.log(result);
 
