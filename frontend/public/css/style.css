@@ -1,6 +1,7 @@
 .table-container {
     display: flex;
     justify-content: center;
+    font-size: 5px;
 }
 
 .left-table,
@@ -8,3 +9,5 @@
     flex: 1;
     margin: 10px;
 }
+
+

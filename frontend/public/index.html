@@ -6,16 +6,16 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <select name="version" id="version_1" onchange="showData()">
-        <option value="zabbix-Server_6.0">6.0</option>
-        <option value="zabbix-Server_5.0">5.0</option>
-        <option value="zabbix-Server_4.0">4.0</option>
+    <select name="version" id="version_1">
+        <option value="6.0">6.0</option>
+        <option value="5.0">5.0</option>
+        <option value="4.0">4.0</option>
     </select>
 
-    <select name="version" id="version_2" onchange="showData()">
-        <option value="zabbix-Server_6.0">6.0</option>
-        <option value="zabbix-Server_5.0">5.0</option>
-        <option value="zabbix-Server_4.0">4.0</option>
+    <select name="version" id="version_2">
+        <option value="6.0">6.0</option>
+        <option value="5.0">5.0</option>
+        <option value="4.0">4.0</option>
     </select>
 
     <select name="version" id="comparison">
@@ -30,6 +30,7 @@
             <table border="1" id="tbl_1">
                 <thead>
                     <tr>
+			<th>Process</th>
                         <th>名前</th>
                         <th>必須</th>
                         <th>範囲</th>
@@ -38,6 +39,14 @@
                     </tr>
                 </thead>
                 <tbody id="tbl_1_body">
+			<tr hidden class="zbx_row_template">
+				<th class="process_0"></th>
+                        	<th class="param_name_0"></th>
+                        	<th class="mandatory_0"></th>
+                        	<th class="val_range_0"></th>
+                       		<th class="val_default_0"></th>
+                	        <th class="param_desc_0"></th>
+			</tr>
                 </tbody>
             </table>
         </div>
@@ -47,6 +56,7 @@
             <table border="1" id="tbl_2">
                 <thead>
                     <tr>
+			<th>Process</th>
                         <th>名前</th>
                         <th>必須</th>
                         <th>範囲</th>
@@ -55,11 +65,20 @@
                     </tr>
                 </thead>
                 <tbody id="tbl_2_body">
+			<tr hidden class="zbx_row_template">
+				<th class="process_0"></th>
+                        	<th class="param_name_0"></th>
+                        	<th class="mandatory_0"></th>
+                        	<th class="val_range_0"></th>
+                       		<th class="val_default_0"></th>
+                	        <th class="param_desc_0"></th>
+			</tr>
                 </tbody>
             </table>
         </div>
     </div>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
