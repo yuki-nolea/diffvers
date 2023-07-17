@@ -1,0 +1,10 @@
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+
+.left-table,
+.right-table {
+    flex: 1;
+    margin: 10px;
+}
