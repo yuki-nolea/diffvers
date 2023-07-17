@@ -1,12 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<title>Page Title</title>
+  <meta charset="UTF-8">
+  <title>HTML Sample</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <select name="version" id="version_1" onchange="showData()">
+        <option value="zabbix-Server_6.0">6.0</option>
+        <option value="zabbix-Server_5.0">5.0</option>
+        <option value="zabbix-Server_4.0">4.0</option>
+    </select>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <select name="version" id="version_2" onchange="showData()">
+        <option value="zabbix-Server_6.0">6.0</option>
+        <option value="zabbix-Server_5.0">5.0</option>
+        <option value="zabbix-Server_4.0">4.0</option>
+    </select>
 
+    <select name="version" id="comparison">
+        <option value="all">全て</option>
+        <option value="match">一致</option>
+        <option value="diff">相違</option>
+    </select>
+
+    <div class="table-container">
+        <div class="left-table">
+            <h2>Version 1</h2>
+            <table border="1" id="tbl_1">
+                <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>必須</th>
+                        <th>範囲</th>
+                        <th>デフォルト</th>
+                        <th>説明</th>
+                    </tr>
+                </thead>
+                <tbody id="tbl_1_body">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="right-table">
+            <h2>Version 2</h2>
+            <table border="1" id="tbl_2">
+                <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>必須</th>
+                        <th>範囲</th>
+                        <th>デフォルト</th>
+                        <th>説明</th>
+                    </tr>
+                </thead>
+                <tbody id="tbl_2_body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
