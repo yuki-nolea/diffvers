@@ -1,0 +1,44 @@
+
+.separator
+{
+  border:1px solid #000000;
+  margin: 0 10px 0 10px;
+  height: 30px;
+}
+
+.space
+{
+  margin-left: 30px;
+}
+
+#text-logo
+{
+  padding: 10px;
+}
+
+#headline
+{
+  font-size:xx-large;
+  font-weight: bold;
+}
+
+#menu-wrapper
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+#nav-container
+{
+  padding-left: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+#view-options-container
+{
+  padding-right: 60px;
+  display: flex;
+}

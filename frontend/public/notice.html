@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Sample</title>
+  <link rel="stylesheet" href="css/shared-style.css">
+  <link rel="stylesheet" href="css/notice.css">
+</head>
+<body>
+  <header>
+    <div id="text-logo">
+      <p id="headline">DiffVers</p>
+    </div>
+  </header>
+
+  <div id="menu-wrapper">
+    <div id="nav-container">
+      <div> <p>Parameters</p> </div>
+      <div class="separator"></div>
+      <div> <p>移行時の注意</p> </div>
+    </div>
+
+    <div id="view-options-container">
+      <label class="selectbox">
+        <select id="process">
+          <option value="Zabbix server">Zabbix server</option>
+          <option value="Zabbix proxy">Zabbix server</option>
+          <option value="Zabbix agent (UNIX)">Zabbix agent (UNIX)</option>
+          <option value="Zabbix agent 2 (UNIX)">Zabbix agent 2 (UNIX)</option>
+          <option value="Zabbix agent (Windows)">Zabbix agent (Windows)</option>
+          <option value="Zabbix agent 2 (Windows)">Zabbix agent 2 (Windows)</option>
+        </select>
+      </label>
+      
+      <div class="space"></div>
+      
+      <label class="selectbox">
+        <select class="selectbox" id="comparison">
+          <option value="diff">diffのみ</option>
+          <option value="match">一致のみ</option>
+          <option value="all">全て</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <label class="selectbox">
+    <select id="version_1">
+      <option value="6.0">6.0</option>
+      <option value="5.0">5.0</option>
+      <option value="4.0">4.0</option>
+    </select>
+  </label>
+
+  <label class="selectbox">
+    <select id="version_2">
+      <option value="6.0">6.0</option>
+      <option value="5.0">5.0</option>
+      <option value="4.0">4.0</option>
+    </select>
+  </label>
+
+
+
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="js/notice.js"></script>
+</body>
+</html>
