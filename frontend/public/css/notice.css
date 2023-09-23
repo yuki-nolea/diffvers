@@ -42,3 +42,47 @@
   padding-right: 60px;
   display: flex;
 }
+
+#ver-options-wrapper
+{
+  display: flex;
+  align-items: center;
+  margin: 15px;
+}
+
+#arrow
+{
+  margin: 10px;
+}
+
+#index-table-wrapper
+{
+  border: 1px solid #000000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#notice-container
+{
+  margin: 15px;
+}
+
+.process-title
+{
+  font-size: 24px;
+}
+
+.notice-wrapper
+{
+  margin-left: 20px;
+}
+
+.notice-title
+{
+  font-size: 20px;
+}
+
+.notice-list
+{
+
+}

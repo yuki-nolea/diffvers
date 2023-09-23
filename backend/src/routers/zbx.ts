@@ -40,4 +40,13 @@ router.get('/zbx', async (req: any, res: any) =>
   res.json(v1_params);
 })
 
+router.get('/zbx/notice/all', async (req: any, res: any) => 
+{
+  const result = await tr.query("select * from notices", null);
+
+  //console.log(result);
+
+  res.json(result);
+})
+
 export default router

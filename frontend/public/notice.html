@@ -15,7 +15,7 @@
 
   <div id="menu-wrapper">
     <div id="nav-container">
-      <div> <p>Parameters</p> </div>
+      <div class="not-selected-tab"> <p>Parameters</p> </div>
       <div class="separator"></div>
       <div> <p>移行時の注意</p> </div>
     </div>
@@ -44,24 +44,66 @@
     </div>
   </div>
 
-  <label class="selectbox">
-    <select id="version_1">
-      <option value="6.0">6.0</option>
-      <option value="5.0">5.0</option>
-      <option value="4.0">4.0</option>
-    </select>
-  </label>
+  <div id="ver-options-wrapper">
+    <label class="selectbox">
+      <select id="version_1">
+        <option value="6.0">6.0</option>
+        <option value="5.0">5.0</option>
+        <option value="4.0" selected>4.0</option>
+      </select>
+    </label>
 
-  <label class="selectbox">
-    <select id="version_2">
-      <option value="6.0">6.0</option>
-      <option value="5.0">5.0</option>
-      <option value="4.0">4.0</option>
-    </select>
-  </label>
+    <div id="arrow">
+      <p>→</p>
+    </div>
+  
+    <label class="selectbox">
+      <select id="version_2">
+        <option value="6.0" selected>6.0</option>
+        <option value="5.0">5.0</option>
+        <option value="4.0">4.0</option>
+      </select>
+    </label>
+  </div>
+
+
+  <div id="notice-container">
+    <div class="notice-wrapper">
+      <div class="process-title">
+        <p>Zabbix Server</p>
+      </div>
+
+      <div id="notice-list-zabbix_server" class="notice-list">
+        <ul>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="notice-wrapper">
+      <div class="process-title">
+        <p>Zabbix Agent</p>
+      </div>
+
+      <div id="notice-list-zabbix_agent" class="notice-list">
+        <ul>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="notice-wrapper">
+      <div class="process-title">
+        <p>Web Interface</p>
+      </div>
+
+      <div id="notice-list-web_interface" class="notice-list">
+        <ul>
+        </ul>
+      </div>
+    </div>
 
 
 
+  </div>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="text/javascript" src="js/notice.js"></script>
