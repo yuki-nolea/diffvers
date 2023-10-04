@@ -7,12 +7,14 @@ import pandas as pd
 from diffvers.items import DiffversItem
 
 class ScrapyzbServerSpider(scrapy.Spider):
+    db_4 = []
+    db_5 = []
+    db_6 = []
     name = "scrapy_zbserver"
     allowed_domains = ["zabbix.com"]
     with open("/home/bitnami/mysql_password", "r", encoding="utf-8") as f:
         lines = f.readlines()
     pw = lines[0].strip()
-    #print("user= " + user)
     #print("pw= " + pw)
     
     def start_requests(self):
@@ -22,6 +24,7 @@ class ScrapyzbServerSpider(scrapy.Spider):
         #yield scrapy.Request("https://www.zabbix.com/documentation/5.0/en/manual/appendix/config/zabbix_agentd", self.parse5)
         yield scrapy.Request("https://www.zabbix.com/documentation/4.0/en/manual/appendix/config/zabbix_server", self.parse4)
         #yield scrapy.Request("https://www.zabbix.com/documentation/4.0/en/manual/appendix/config/zabbix_agentd", self.parse4)
+
 
     def parse4(self, response):
 
@@ -63,6 +66,8 @@ class ScrapyzbServerSpider(scrapy.Spider):
                 db4h.insert(len(db4h), zs4_ntable[i][j])
 
             db_4.append(db4h)
+
+        yield db_4
 
         #print(zs4_ntable)
         #print(len(zs4_ntable))
@@ -112,6 +117,8 @@ class ScrapyzbServerSpider(scrapy.Spider):
                 db5h.insert(len(db5h), zs5_ntable[i][j])
 
             db_5.append(db5h)
+        
+        yield db_5
 
         #print(zs5_ntable)
         #print(len(zs5_ntable))
@@ -162,6 +169,8 @@ class ScrapyzbServerSpider(scrapy.Spider):
                 dbh.insert(len(dbh), zs6_ntable[i][j])
 
             db_6.append(dbh)
+
+        yield db_6
         
         #print(zs6_ntable)
         #print(len(zs6_ntable))
@@ -170,6 +179,8 @@ class ScrapyzbServerSpider(scrapy.Spider):
         #with open('zb6.csv', 'w') as f:
         #    writer = csv.writer(f)
         #    writer.writerows(db_6)
+        
+        #connection = create_db_connection("localhost", "diffvers", pw,"diffvers")
         
 
     def create_db_connection(host_name, user_name, user_password, db_name):
@@ -188,5 +199,7 @@ class ScrapyzbServerSpider(scrapy.Spider):
         return connection
     
 
-    connection = create_db_connection("localhost", "diffvers", pw,"diffvers")
+    #connection = create_db_connection("localhost", "diffvers", pw,"diffvers")
 
+    for i in scrapy.Request():
+        print("d6= "+db6)
