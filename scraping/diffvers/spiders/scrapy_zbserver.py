@@ -201,5 +201,5 @@ class ScrapyzbServerSpider(scrapy.Spider):
 
     #connection = create_db_connection("localhost", "diffvers", pw,"diffvers")
 
-    for i in scrapy.Request():
-        print("d6= "+db6)
+    #for i in scrapy.Request():
+    #    print("d6= "+db6)
