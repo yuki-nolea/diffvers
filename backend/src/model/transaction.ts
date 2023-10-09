@@ -8,7 +8,7 @@ let connection: mysql.Connection;
 const connect = () =>
 {
   connection = mysql.createConnection({
-    host: '127.0.0.1',
+    host: 'localhost',
     user: 'diffvers',
     password: process.env.dbpass,
     port: 3306,

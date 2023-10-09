@@ -105,14 +105,39 @@ const showTable = async (table) => {
 
 
   // rowDataArrayにデータを投入
-  const rowDataArray = JSON.parse(JSON.stringify(rowDataArray_original));
-  //const rowDataArray = await axios.get("http://hirasyain.link:3000/zbx/all");
+  //const rowDataArray = JSON.parse(JSON.stringify(rowDataArray_original));
+  const rowDataArray = await axios.get("http://hirasyain.link:3000/zbx/all");
 
+  for(let i=0; i<rowDataArray.data.length; ++i)
+  {
+    for(const key in rowDataArray.data[i])
+    {
+	if(key == 'id') delete rowDataArray.data[i][key]
+	else rowDataArray.data[i][key] = {value: rowDataArray.data[i][key], match: false}
+    }
+  }
+
+
+const sha256 = async (text) => {
+    const uint8  = new TextEncoder().encode(text)
+    const digest = await crypto.subtle.digest('SHA-256', uint8)
+    return Array.from(new Uint8Array(digest)).map(v => v.toString(16).padStart(2,'0')).join('')
+}
+
+   console.log(sha256('テスト').then(hash => console.log(hash)));
   // ver1_paramsとver2_paramsを作成
   const get_specified_param = (process, ver) => {
     const ar = [];
     for (const item of rowDataArray.data) {
-      if (item.process.value == process && item.ver.value == ver) ar.push(item);
+      console.log("process.value:", item.process.value)
+      console.log("process:", process)
+      console.log("ver.value:", item.ver.value)
+      console.log("ver:", ver)
+	    console.log("condithon: ", item.process.value == process)
+      if (item.process.value == process && item.ver.value == ver){
+	      ar.push(item);
+	      console.log("aaaaa");
+      }
     }
     return ar;
   }
@@ -140,6 +165,7 @@ const showTable = async (table) => {
       ver1_params.push(item);
     }
   }
+
 
   // テーブル表示
   let rowsIndex1 = 1;

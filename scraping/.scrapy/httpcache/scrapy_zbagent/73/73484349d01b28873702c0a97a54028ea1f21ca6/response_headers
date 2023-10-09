@@ -1,0 +1,19 @@
+Date: Sun, 08 Oct 2023 11:37:29 GMT
+Content-Type: text/plain
+Last-Modified: Thu, 08 Jun 2023 08:14:50 GMT
+Vary: Accept-Encoding
+Etag: W/"64818dfa-8f"
+Access-Control-Allow-Origin: *
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Cf-Connecting-Ip: 52.196.49.242
+Cf-Ipcountry: JP
+Content-Encoding: gzip
+Cf-Cache-Status: BYPASS
+Set-Cookie: zabbix_language=jp;Domain=.zabbix.com;Path=/;Max-Age=86400
+Set-Cookie: zbcfipc=JP;Domain=.zabbix.com;Path=/;Max-Age=86400
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=33yeks4ANA9l4Xs60EruZyCe0HROupFj4Wj9WkHRD%2BIA%2FTyIJG6AEriRwkC%2Fw3PIoywoLG3MnS8Gr8E23dF6KDu0bvCnSeSOJgsxVFtCsRmW2CxS71xkqEdgqI2oUpQ1"}],"group":"cf-nel","max_age":604800}
+Nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+Cf-Ray: 812e1797bc1b1d5b-NRT

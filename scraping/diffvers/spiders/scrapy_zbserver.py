@@ -23,7 +23,7 @@ class ScrapyzbServerSpider(scrapy.Spider):
 
             connection.commit()
 
-        zs = "Zabbix sever"
+        zs = "Zabbix server"
         za = "Zabbix agent (UNIX)"
         list1=["4.0","5.0","6.0","4.0","5.0","6.0"]
         list2=[zs,zs,zs,za,za,za]

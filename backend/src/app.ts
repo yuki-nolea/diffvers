@@ -6,6 +6,7 @@ import zbxRouter from '@/routers/zbx'
 const app = express()
 
 const port = 3000
+//const port = 80
 
 app.use(express.static(path.join(__dirname, "public")))
 
