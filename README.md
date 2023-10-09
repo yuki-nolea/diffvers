@@ -70,12 +70,12 @@ mysql> quit;
 
 # scrapy実行
 
----
+```
 # scrapy crawl scrapy_zbserver
----
+```
 
 # Redmine停止
 
----
+```
 # systemctl stop bitnami.service
----
+```
