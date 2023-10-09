@@ -68,8 +68,14 @@ mysql> quit;
 # yarn run prod
 ```
 
-#scrapy実行
+# scrapy実行
 
 ---
 # scrapy crawl scrapy_zbserver
+---
+
+# Redmine停止
+
+---
+# systemctl stop bitnami.service
 ---
