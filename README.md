@@ -67,3 +67,9 @@ mysql> quit;
 # cd ./backend
 # yarn run prod
 ```
+
+#scrapy実行
+
+---
+# scrapy crawl scrapy_zbserver
+---
