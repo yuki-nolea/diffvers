@@ -12,15 +12,3 @@ class DiffversPipeline:
     def process_item(self, item, spider):
         return item
 
-class ZabbixServerPipeline:
-    def process_item(self, item, spider):
-        if spider.name not in ['scrapy_zbserver']:
-            return item
-        yield item
-
-class ZabbixAgentPipeline:
-    def process_item(self, item, spider):
-        if spider.name not in ['scrapy_zbagent']:
-            return item
-
-        yield item

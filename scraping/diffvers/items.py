@@ -7,7 +7,5 @@ import scrapy
 
 
 class DiffversItem(scrapy.Item):
-    url = scrapy.Field()
-    title = scrapy.Field()
-    date = scrapy.Field()
+    dbzb_4 = scrapy.Field()
     pass

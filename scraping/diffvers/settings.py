@@ -64,8 +64,6 @@ DOWNLOAD_DELAY = 5
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     "diffvers.pipelines.DiffversPipeline": 300,
-    "diffvers.pipelines.ZabbixServerPipeline": 400,
-    "diffvers.pipelines.ZabbixAgentPipeline": 500,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
