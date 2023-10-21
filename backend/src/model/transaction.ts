@@ -1,7 +1,22 @@
 import mysql from 'mysql2'
 import * as dotenv from 'dotenv'
+import logger from '@/model/log'
 
 dotenv.config();
+
+const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'diffvers',
+  database: 'diffvers',
+  password: process.env.dbpass,
+  waitForConnections: true,
+  connectionLimit: 10,
+  maxIdle: 10, // max idle connections, the default value is the same as `connectionLimit`
+  idleTimeout: 60000, // idle connections timeout, in milliseconds, the default value 60000
+  queueLimit: 0,
+  enableKeepAlive: true,
+  keepAliveInitialDelay: 0
+});
 
 let connection: mysql.Connection;
 
@@ -17,10 +32,10 @@ const connect = () =>
   
   connection.on('error', (err: any) => 
   {
-    console.log('db error: ', err);
+    logger.info('db error: ', err);
     if(err.code === 'PROTOCOL_CONNECTION_LOST')
     {
-        console.log('re-make db connection... ');
+        logger.info('re-make db connection... ');
         connect();
     }
     else throw err;
@@ -30,11 +45,11 @@ const connect = () =>
   {
     if(err)
     {
-      console.log('error db connection: ', err.stack);
+      logger.info('error db connection: ', err.stack);
       setTimeout(connect, 1000);
       return;
     }
-    console.log('db connection success');
+    logger.info('db connection success');
   });
 }
 
@@ -51,7 +66,7 @@ const transaction = class
       {
         connection.beginTransaction((err: any) => 
         {
-          console.log("transaction begin: ");
+          logger.info("transaction begin: ");
           
           if(err)
           {
@@ -70,30 +85,35 @@ const transaction = class
     });
   }
 
-  query(statement: string, params: any)
+  query(statement: string)
   {
     return new Promise((resolve, reject) => 
     {
-      const proc = () =>
+      pool.getConnection((err, conn) =>
       {
-        connection.query(statement, params, (err: any, results: any) => 
+        const proc = () =>
         {
-          console.log("transaction query: ", statement, params);
-
-          if(err)
+          conn.query(statement, (err: any, results: any, fields) => 
           {
-            if(err.code === 'PROTOCOL_CONNECTION_LOST')
-            {
-              proc();
-              return;
-            }
-            reject(err);
-          }
-          else resolve(results);
-        });
-      }
+            logger.info("transaction query: ", statement, fields);
 
-      proc();
+            if(err)
+            {
+              if(err.code === 'PROTOCOL_CONNECTION_LOST')
+              {
+                proc();
+                return;
+              }
+              reject(err);
+            }
+            else resolve(results);
+          });
+
+          pool.releaseConnection(conn);
+        }
+
+        proc();
+      });
     });
   }
 
@@ -105,7 +125,7 @@ const transaction = class
       {
         connection.commit((err) => 
         {
-          console.log("transaction commit: ");
+          logger.info("transaction commit: ");
           
           if(err)
           {
@@ -130,7 +150,7 @@ const transaction = class
       {
           connection.rollback(() => 
           {
-              console.log("transaction rollback: ", err);
+              logger.info("transaction rollback: ", err);
               reject(err); 
           });
       });
