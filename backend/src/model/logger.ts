@@ -1,5 +1,4 @@
 import log4js from 'log4js';
-//const log4js = require('log4js');
 
 log4js.configure({
   "appenders": {
@@ -25,21 +24,14 @@ log4js.configure({
     }
   },
   "categories": {
-    "default": {
-      "appenders": [
-        "system",
-        "error",
-        "console"
-      ],
-      "level": "debug"
-    }
+    "default": { "appenders": ["system","error","console"], "level": "debug" },
+    "system": { "appenders": ["system","console"], "level": "debug" },
+    "error": { "appenders": ["error","console"], "level": "debug" },
   }
 });
 
-const logger = log4js.getLogger("system");
+const sys_logger = log4js.getLogger("system");
+const err_logger = log4js.getLogger("err");
 
-//debugLogger.debug('Hello world! for debug');
-//systemLogger.info('Hello world! for system');
-
-export default logger;
+export { sys_logger, err_logger };
 
