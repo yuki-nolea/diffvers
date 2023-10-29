@@ -41,7 +41,14 @@
     <label class="selectbox-005">
         <select name="version" id="process">
             <option value="Zabbix server">Zabbix server</option>
+            <option value="Zabbix proxy">Zabbix proxy</option>
             <option value="Zabbix agent (UNIX)">Zabbix agent (UNIX)</option>
+            <!-- <option value="Zabbix agent2 (UNIX)">Zabbix agent 2 (UNIX)</option> -->
+            <option value="Zabbix agent (Windows)">Zabbix agent (Windows)</option>
+            <!-- <option value="Zabbix agent2 (Windows)">Zabbix agent 2 (Windows)</option> -->
+            <!-- <option value="Zabbix agent 2 plugins">Zabbix agent 2 plugins</option> -->
+            <!-- <option value="Zabbix Java gateway">Zabbix Java gateway</option> -->
+            <!-- <option value="Zabbix web service">Zabbix web service</option> -->
         </select>
     </label>
 
@@ -51,22 +58,20 @@
             <table border="1" id="tbl_1">
                 <thead>
                     <tr>
-                        <th>Process</th>
                         <th>名前</th>
-                        <th>必須</th>
-                        <th>範囲</th>
-                        <th>デフォルト</th>
-                        <th>説明</th>
+                        <th hidden class="hidden_gp_1">必須</th>
+                        <th hidden class="hidden_gp_1">範囲</th>
+                        <th hidden class="hidden_gp_1">デフォルト</th>
+                        <th class="hidden_gp_0">説明</th>
                     </tr>
                 </thead>
                 <tbody id="tbl_1_body">
                     <tr hidden class="zbx_row_template">
-                        <th class="process_0" id=".process_0"></th>
-                        <th class="param_name_0" id=".param_name_0"></th>
-                        <th class="mandatory_0" id=".mandatory_0"></th>
-                        <th class="val_range_0" id=".val_range_0"></th>
-                        <th class="val_default_0" id=".val_default_0"></th>
-                        <th class="param_desc_0" id=".param_desc_0"></th>
+                        <th class="param_name" id="param_name_0"></th>
+                        <th hidden class="mandatory hidden_gp_1" id="mandatory_0"></th>
+                        <th hidden class="val_range hidden_gp_1" id="val_range_0"></th>
+                        <th hidden class="val_default hidden_gp_1" id="val_default_0"></th>
+                        <th class="param_desc hidden_gp_0" id="param_desc_0"></th>
                     </tr>
                 </tbody>
             </table>
@@ -77,27 +82,27 @@
             <table border="1" id="tbl_2">
                 <thead>
                     <tr>
-                        <th>Process</th>
                         <th>名前</th>
-                        <th>必須</th>
-                        <th>範囲</th>
-                        <th>デフォルト</th>
-                        <th>説明</th>
+                        <th hidden class="hidden_gp_1">必須</th>
+                        <th hidden class="hidden_gp_1">範囲</th>
+                        <th hidden class="hidden_gp_1">デフォルト</th>
+                        <th class="hidden_gp_0">説明</th>
                     </tr>
                 </thead>
                 <tbody id="tbl_2_body">
                     <tr hidden class="zbx_row_template">
-                        <th class="process_0" id=".process_0"></th>
-                        <th class="param_name_0" id=".param_name_0"></th>
-                        <th class="mandatory_0" id=".mandatory_0"></th>
-                        <th class="val_range_0" id=".val_range_0"></th>
-                        <th class="val_default_0" id=".val_default_0"></th>
-                        <th class="param_desc_0" id=".param_desc_0"></th>
+                        <th class="param_name" id="param_name_0"></th>
+                        <th hidden class="mandatory hidden_gp_1" id="mandatory_0"></th>
+                        <th hidden class="val_range hidden_gp_1" id="val_range_0"></th>
+                        <th hidden class="val_default hidden_gp_1" id="val_default_0"></th>
+                        <th class="param_desc hidden_gp_0" id="param_desc_0"></th>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+    <button id="top_btn">切替</button>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
