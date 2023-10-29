@@ -4,19 +4,19 @@ log4js.configure({
   "appenders": {
     "system": {
       "type": "dateFile",
-      "filename": "log/system.log",
+      "filename": "logs/system.log",
       "backups": 2,
       "compress": true,
       "pattern": "-yyyy-MM-dd"
     },
     "access": {
       "type": "dateFile",
-      "filename": "log/access.log",
+      "filename": "logs/access.log",
       "pattern": "-yyyy-MM-dd"
     },
     "error": {
       "type": "dateFile",
-      "filename": "log/error.log",
+      "filename": "logs/error.log",
       "pattern": "-yyyy-MM-dd"
     },
     "console": {
@@ -26,12 +26,12 @@ log4js.configure({
   "categories": {
     "default": { "appenders": ["system","error","console"], "level": "debug" },
     "system": { "appenders": ["system","console"], "level": "debug" },
-    "error": { "appenders": ["error","console"], "level": "debug" },
+    "error": { "appenders": ["error","console"], "level": "error" },
   }
 });
 
 const sys_logger = log4js.getLogger("system");
-const err_logger = log4js.getLogger("err");
+const err_logger = log4js.getLogger("error");
 
 export { sys_logger, err_logger };
 
