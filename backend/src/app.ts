@@ -2,6 +2,7 @@ import express from 'express'
 import path from 'path'
 
 import zbxRouter from '@/routers/zbx'
+import {sys_logger, err_logger, con_logger} from '@/model/logger'
 
 const app = express()
 
@@ -24,5 +25,5 @@ app.get('/test', (req: any, res: any) => {
 
 
 export default app.listen(port, () => {
-  console.log(`App is running at http://localhost:${port}`)
+  con_logger.info(`App is running at http://localhost:${port}`)
 })

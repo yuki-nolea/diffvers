@@ -1,6 +1,7 @@
 import express from 'express';
 import tr from '@/model/transaction'
 import { ZbxParam } from '@/model/zbx-param';
+import {sys_logger, err_logger, con_logger} from '@/model/logger'
 
 const router = express.Router();
 
@@ -27,7 +28,7 @@ router.get('/zbx', async (req: any, res: any) =>
   
     for(const item of results) {
       v1_params.push(new ZbxParam(item as ZbxParam))
-      console.log(JSON.stringify(v1_params[v1_params.length-1]))
+      con_logger.log(JSON.stringify(v1_params[v1_params.length-1]))
     }
   }
 
