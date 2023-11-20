@@ -1,46 +1,137 @@
-.table-container {
+.app
+{
+    display: grid;
+    grid-template-rows: 48px 112px 1fr 40px;
+    grid-template-columns: 1fr 1fr;
+    background: #FAFAFA;
+    height: 100%;
+}
+
+.filter_wrapper
+{
+    grid-row: 2/3;
+    grid-column: 1/3;
+
+    display: grid;
+    grid-template-rows: 56px 56px;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 20px 0 20px;
+}
+
+.left_version_selectbox_wrapper
+{
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+.right_version_selectbox_wrapper
+{
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+.filters_left_position_wrapper
+{
+    grid-row: 1/2;
+    grid-column: 1/2;
+
+    display: flex;
+    gap: 0 32px;
+}
+
+.table_wrapper
+{
+    grid-row: 3/4;
+    grid-column: 1/3;
     display: flex;
     justify-content: center;
-    font-size: 5px;
+    padding: 10px;
 }
 
-.left-table,
-.right-table {
-    flex: 1;
-    margin: 10px;
+.space
+{
+    grid-row: 4/5;
+    grid-column: 1/3;
 }
 
-.selectbox-005 {
-    display: inline-flex;
-    align-items: center;
-    position: relative;
+.row_wrapper
+{
+    width: 100%;
 }
 
-.selectbox-005::after {
-    position: absolute;
-    right: 15px;
-    width: 10px;
-    height: 7px;
-    background-color: #535353;
-    clip-path: polygon(0 0, 100% 0, 50% 100%);
-    content: '';
-    pointer-events: none;
+.row_param
+{
+    display: flex;
+    margin: 10px 0px;
 }
 
-.selectbox-005 select {
-    appearance: none;
-    min-width: 230px;
-    height: 2.8em;
-    padding: .4em calc(.8em + 30px) .4em .8em;
-    border: none;
-    border-bottom: 2px solid #cccccc;
-    background-color: #fff;
-    color: #333333;
-    font-size: 1em;
-    cursor: pointer;
+.row_param:hover .param_card
+{
+    box-shadow: 0 4px 7px rgba(0,0,0,0.25), 0 2px 2px rgba(0,0,0,0.22);
 }
 
-.selectbox-005 select:focus {
-    outline: none;
+.param_card
+{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 158px 96px 158px 1fr;
+    width: 100%;
+    margin: 0 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    font-size: x-small;
+    border-radius: 5px;
 }
 
+.param_cell
+{
+    border-right: 1px solid #E0E0E0;
+    text-align: center;
+    overflow-wrap: break-word;
+    padding: 10px;
+}
+
+.param_desc
+{
+    grid-column: 2/5;
+}
+
+
+.toggle_display_button
+{
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+}
+
+.toggle_display_button span
+{
+    line-height: 58px;
+}
+
+.parameter_match
+{
+    color: black;
+    padding: 1px;
+    /* background-color: aqua; */
+}
+
+.parameter_diff
+{
+    color: white;
+    background-color: red;
+}
+
+.parameter_exist
+{
+    color: white;
+    background-color: #0DDF08;
+}
+
+.parameter_not_exist
+{
+    color: white;
+    background-color: #D9D9D9;
+    text-decoration: line-through;
+}

@@ -1,3 +1,5 @@
+import {sys_logger, err_logger} from '@/model/logger'
+
 export class ZbxParam
 {
   public id: number;
@@ -23,7 +25,7 @@ export class ZbxParam
 
   constructor({id, process, ver, param_name, mandatory, val_range, val_default, param_desc}: ZbxParam)
   {
-    console.log("constructor: " + id + " " + process);
+    sys_logger.info("constructor: " + id + " " + process);
 
     this.id = id;
     this.process = process;

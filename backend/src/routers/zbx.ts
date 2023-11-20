@@ -1,12 +1,14 @@
 import express from 'express';
 import tr from '@/model/transaction'
 import { ZbxParam } from '@/model/zbx-param';
+import {sys_logger, err_logger, con_logger} from '@/model/logger'
 
 const router = express.Router();
 
 router.get('/zbx/all', async (req: any, res: any) => 
 {
-  const result = await tr.query("select * from parameters", null);
+  console.log("e")
+  const result = await tr.query("select * from parameters");
 
   //console.log(result);
 
@@ -22,11 +24,11 @@ router.get('/zbx', async (req: any, res: any) =>
 
   if(v1)
   {
-    const results = await tr.query("select * from parameters where ver=?", [v1]) as Array<any>;
+    const results = await tr.query("select * from parameters where ver=?") as Array<any>;
   
     for(const item of results) {
       v1_params.push(new ZbxParam(item as ZbxParam))
-      console.log(JSON.stringify(v1_params[v1_params.length-1]))
+      con_logger.log(JSON.stringify(v1_params[v1_params.length-1]))
     }
   }
 
@@ -42,7 +44,7 @@ router.get('/zbx', async (req: any, res: any) =>
 
 router.get('/zbx/notice/all', async (req: any, res: any) => 
 {
-  const result = await tr.query("select * from notices", null);
+  const result = await tr.query("select * from notices");
 
   //console.log(result);
 

@@ -52,7 +52,12 @@
 
 #arrow
 {
-  margin: 10px;
+  margin: 0 10px;
+}
+
+#arrow p
+{
+  margin-top: 15px;
 }
 
 #index-table-wrapper

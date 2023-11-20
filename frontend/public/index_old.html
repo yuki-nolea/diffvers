@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Sample</title>
+    <link rel="stylesheet" href="css/style_old.css">
+</head>
+
+<body>
+    <h3>比較元</h3>
+    <p>追加・削除が表示</p>
+    <label class="selectbox-005">
+        <select name="version" id="version_1">
+            <option value="6.0">6.0</option>
+            <option value="5.0">5.0</option>
+            <option value="4.0">4.0</option>
+        </select>
+    </label>
+
+    <h3>比較先</h3>
+    <p>削除が表示</p>
+    <label class="selectbox-005">
+        <select name="version" id="version_2">
+            <option value="6.0">6.0</option>
+            <option value="5.0">5.0</option>
+            <option value="4.0">4.0</option>
+        </select>
+    </label>
+
+    <h3>表示方法</h3>
+    <label class="selectbox-005">
+        <select name="version" id="comparison">
+            <option value="all">全て</option>
+            <option value="match">一致</option>
+            <option value="diff">相違</option>
+        </select>
+    </label>
+
+    <h3>プロセス</h3>
+    <label class="selectbox-005">
+        <select name="version" id="process">
+            <option value="Zabbix server">Zabbix server</option>
+            <option value="Zabbix proxy">Zabbix proxy</option>
+            <option value="Zabbix agent (UNIX)">Zabbix agent (UNIX)</option>
+            <!-- <option value="Zabbix agent2 (UNIX)">Zabbix agent 2 (UNIX)</option> -->
+            <option value="Zabbix agent (Windows)">Zabbix agent (Windows)</option>
+            <!-- <option value="Zabbix agent2 (Windows)">Zabbix agent 2 (Windows)</option> -->
+            <!-- <option value="Zabbix agent 2 plugins">Zabbix agent 2 plugins</option> -->
+            <!-- <option value="Zabbix Java gateway">Zabbix Java gateway</option> -->
+            <!-- <option value="Zabbix web service">Zabbix web service</option> -->
+        </select>
+    </label>
+
+    <div class="table-container">
+        <div class="left-table">
+            <h2>Version 1</h2>
+            <table border="1" id="tbl_1">
+                <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th hidden class="hidden_gp_1">必須</th>
+                        <th hidden class="hidden_gp_1">範囲</th>
+                        <th hidden class="hidden_gp_1">デフォルト</th>
+                        <th class="hidden_gp_0">説明</th>
+                    </tr>
+                </thead>
+                <tbody id="tbl_1_body">
+                    <tr hidden class="zbx_row_template">
+                        <th class="param_name" id="param_name_0"></th>
+                        <th hidden class="mandatory hidden_gp_1" id="mandatory_0"></th>
+                        <th hidden class="val_range hidden_gp_1" id="val_range_0"></th>
+                        <th hidden class="val_default hidden_gp_1" id="val_default_0"></th>
+                        <th class="param_desc hidden_gp_0" id="param_desc_0"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="right-table">
+            <h2>Version 2</h2>
+            <table border="1" id="tbl_2">
+                <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th hidden class="hidden_gp_1">必須</th>
+                        <th hidden class="hidden_gp_1">範囲</th>
+                        <th hidden class="hidden_gp_1">デフォルト</th>
+                        <th class="hidden_gp_0">説明</th>
+                    </tr>
+                </thead>
+                <tbody id="tbl_2_body">
+                    <tr hidden class="zbx_row_template">
+                        <th class="param_name" id="param_name_0"></th>
+                        <th hidden class="mandatory hidden_gp_1" id="mandatory_0"></th>
+                        <th hidden class="val_range hidden_gp_1" id="val_range_0"></th>
+                        <th hidden class="val_default hidden_gp_1" id="val_default_0"></th>
+                        <th class="param_desc hidden_gp_0" id="param_desc_0"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <button id="top_btn">切替</button>
+
+    <script src="js/axios.min.js"></script>
+    <script type="text/javascript" src="js/script_old.js"></script>
+</body>
+
+</html>

@@ -3,11 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>HTML Sample</title>
+    <title>Diffvers</title>
+    <link rel="stylesheet" href="css/shared-style.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notice.css">
+    <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="js/material.min.js"></script>
 </head>
 
 <body>
+<<<<<<< HEAD
     <h3>比較元</h3>
     <p>追加・削除が表示</p>
     <label class="selectbox-005">
@@ -105,7 +111,177 @@
     <button id="top_btn">切替</button>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+=======
+    <div class="app mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+        <div class="header ">
+            <div class="title">
+                <p>Diffvers</p>
+            </div>
+            <div class="tab_bar mdl-tabs__tab-bar">
+                <a href="#configuration_panel" class="mdl-tabs__tab is-active">Configuration</a>
+                <a href="#notice_panel" class="mdl-tabs__tab">Notice</a>
+            </div>
+        </div>
+
+        <div class="tab_panel mdl-tabs__panel is-active" id="configuration_panel">
+            <div class="filter_wrapper">
+                <div class="left_version_selectbox_wrapper">
+                    <label for="left_version_selectbox">Ver : </label>
+                    <div class="selectbox">
+                        <select name="left_version_selectbox" class="left_version_selectbox">
+                            <option value="6.0">6.0</option>
+                            <option value="5.0">5.0</option>
+                            <option value="4.0">4.0</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="right_version_selectbox_wrapper">
+                    <label for="right_version_selectbox">Ver : </label>
+                    <div class="selectbox">
+                        <select name="right_version_selectbox" class="right_version_selectbox">
+                            <option value="6.0">6.0</option>
+                            <option value="5.0">5.0</option>
+                            <option value="4.0">4.0</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <div class="filters_left_position_wrapper">
+                    <div class="filter_selectbox_wrapper">
+                        <label for="filter_selectbox">Filter : </label>
+                        <div class="selectbox">
+                            <select name="filter_selectbox" class="filter_selectbox">
+                                <option value="all">None</option>
+                                <option value="match">Only Match</option>
+                                <option value="diff">Only differences</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="process_selectbox_wrapper">
+                        <label for="process_selectbox">Process : </label>
+                        <div class="selectbox">
+                            <select name="process_selectbox" class="process_selectbox">
+                                <option value="Zabbix server">Zabbix server</option>
+                                <option value="Zabbix proxy">Zabbix proxy</option>
+                                <option value="Zabbix agent (UNIX)">Zabbix agent (UNIX)</option>
+                                <!-- <option value="Zabbix agent2 (UNIX)">Zabbix agent 2 (UNIX)</option> -->
+                                <option value="Zabbix agent (Windows)">Zabbix agent (Windows)</option>
+                                <!-- <option value="Zabbix agent2 (Windows)">Zabbix agent 2 (Windows)</option> -->
+                                <!-- <option value="Zabbix agent 2 plugins">Zabbix agent 2 plugins</option> -->
+                                <!-- <option value="Zabbix Java gateway">Zabbix Java gateway</option> -->
+                                <!-- <option value="Zabbix web service">Zabbix web service</option> -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table_wrapper">
+                <div class="table_title_container">
+                    <div class="left_table_title"></div>
+                    <div class="right_table_title"></div>
+                </div>
+                <div class="row_wrapper">
+                    <div class="row_param row_template ">
+                        <div class="param_card left_param_card">
+                            <div class="param_cell param_name mdl-data-table__cell--non-numeric" data-id="">名前</div>
+                            <div hidden class="param_cell mandatory display_group_0 mdl-data-table__cell--non-numeric" data-id="">必須</div>
+                            <div hidden class="param_cell val_range display_group_0 mdl-data-table__cell--non-numeric" data-id="">範囲</div>
+                            <div hidden class="param_cell val_default display_group_0 mdl-data-table__cell--non-numeric" data-id="">デフォルト</div>
+                            <div class="param_cell param_desc display_group_1 mdl-data-table__cell--non-numeric" data-id="">説明</div>
+                        </div>
+                        <div class="param_card right_param_card">
+                            <div class="param_cell param_name mdl-data-table__cell--non-numeric" data-id="">名前</div>
+                            <div hidden class="param_cell mandatory display_group_0 mdl-data-table__cell--non-numeric" data-id="">必須</div>
+                            <div hidden class="param_cell val_range display_group_0 mdl-data-table__cell--non-numeric" data-id="">範囲</div>
+                            <div hidden class="param_cell val_default display_group_0 mdl-data-table__cell--non-numeric" data-id="">デフォルト</div>
+                            <div class="param_cell param_desc display_group_1 mdl-data-table__cell--non-numeric" data-id="">説明</div>
+                        </div>
+                    </div>
+                    <div class="row_container">
+                    </div>
+                </div>
+            
+                <div class="toggle_display_button">
+                    <div class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+                        <span>⇄</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space"></div>     
+        </div>
+
+        
+        <div class="tab_panel mdl-tabs__panel" id="notice_panel">
+            
+              <div id="ver-options-wrapper">
+                <label class="selectbox">
+                  <select id="version_1">
+                    <option value="6.0">ver 6.0</option>
+                    <option value="5.0">ver 5.0</option>
+                    <option value="4.0" selected>ver 4.0</option>
+                  </select>
+                </label>
+            
+                <div id="arrow">
+                  <p>→</p>
+                </div>
+              
+                <label class="selectbox">
+                  <select id="version_2">
+                    <option value="6.0" selected>ver 6.0</option>
+                    <option value="5.0">ver 5.0</option>
+                    <option value="4.0">ver 4.0</option>
+                  </select>
+                </label>
+              </div>
+            
+            
+            <div id="notice-container">
+            <div class="notice-wrapper">
+                <div class="process-title">
+                <p>Zabbix Server</p>
+                </div>
+        
+                <div id="notice-list-zabbix_server" class="notice-list">
+                <ul>
+                </ul>
+                </div>
+            </div>
+            
+            <div class="notice-wrapper">
+                <div class="process-title">
+                <p>Zabbix Agent</p>
+                </div>
+        
+                <div id="notice-list-zabbix_agent" class="notice-list">
+                <ul>
+                </ul>
+                </div>
+            </div>
+            
+            <div class="notice-wrapper">
+                <div class="process-title">
+                <p>Web Interface</p>
+                </div>
+        
+                <div id="notice-list-web_interface" class="notice-list">
+                <ul>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/axios.min.js"></script>
+>>>>>>> dev
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/notice.js"></script>
 </body>
 
 </html>
