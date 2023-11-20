@@ -1,5 +1,21 @@
 # diffvers
 
+# Running the app
+- アプリケーションの起動
+```
+# npx forever start <project root>/frontend/app.js
+```
+
+- アプリケーションの停止
+```
+# npx forever stop <project root>/frontend/app.js
+```
+
+- アプリケーションの再起動
+```
+# npx forever restart <project root>/frontend/app.js
+```
+
 # Cloning the app
 1. github からリポジトリをクローン
 ```
@@ -38,7 +54,7 @@
 ```
 
 
-# Running the app
+# Running the app in development mode
 1. 初期データベースの作成
 ```
 # mysql -u root -p
