@@ -25,6 +25,7 @@ app.get('/test', (req: any, res: any) => {
   res.json({id: 1, name: "aaaaa"});
 })
 
+/*
 const server = https.createServer(
   {
     key: fs.readFileSync('/opt/bitnami/letsencrypt/certificates/hirasyain.link.key'),
@@ -32,6 +33,7 @@ const server = https.createServer(
   },
   app
 );
+*/
 
 export default app.listen(port, () => {
   con_logger.info(`App is running at http://localhost:${port}`)
