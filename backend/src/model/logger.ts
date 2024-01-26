@@ -1,10 +1,11 @@
 import log4js from 'log4js';
+import path from 'path';
 
 log4js.configure({
   "appenders": {
     "system": {
       type: "dateFile",
-      filename: "logs/system.log",
+      filename: path.resolve(__dirname, 'logs/system.log'),
       compress: true,
       pattern: "-yyyy-MM-dd",
       keepFileExt: true,
@@ -12,7 +13,7 @@ log4js.configure({
     },
     "error": {
       type: "dateFile",
-      filename: "logs/error.log",
+      filename: path.resolve(__dirname, 'logs/error.log'),
       compress: true,
       pattern: "-yyyy-MM-dd",
       keepFileExt: true,
