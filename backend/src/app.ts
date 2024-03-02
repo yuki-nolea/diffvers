@@ -21,20 +21,28 @@ app.use((req, res, next) => {
 
 app.use(zbxRouter);
 
-app.get('/test', (req: any, res: any) => {
-  res.json({id: 1, name: "aaaaa"});
-})
 
 /*
-const server = https.createServer(
-  {
-    key: fs.readFileSync('/opt/bitnami/letsencrypt/certificates/hirasyain.link.key'),
-    cert: fs.readFileSync('/opt/bitnami/letsencrypt/certificates/hirasyain.link.crt'),
-  },
-  app
-);
-*/
-
 export default app.listen(port, () => {
   con_logger.info(`App is running at http://localhost:${port}`)
 })
+*/
+/*
+    key: fs.readFileSync('/opt/bitnami/letsencrypt/certificates/hirasyain.link.key'),
+    cert: fs.readFileSync('/opt/bitnami/letsencrypt/certificates/hirasyain.link.crt'),
+*/
+/*
+    key: fs.readFileSync('/home/ume/code/certificates/hirasyain.link.key'),
+    cert: fs.readFileSync('/home/ume/code/certificates/hirasyain.link.crt'),
+    ca: fs.readFileSync('/home/ume/code/certificates/hirasyain.link.issuer.crt'),
+*/
+export default https.createServer(
+  {
+    key: fs.readFileSync('/opt/bitnami/letsencrypt/certificates/hirasyain.link.key'),
+    cert: fs.readFileSync('/opt/bitnami/letsencrypt/certificates/hirasyain.link.crt'),
+    ca: fs.readFileSync('/opt/bitnami/letsencrypt/certificates/hirasyain.link.issuer.crt'),
+  },
+  app
+).listen(port, () => {
+  con_logger.info(`App is running at http://localhost:${port}`)
+});
