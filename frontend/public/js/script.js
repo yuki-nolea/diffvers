@@ -1,5 +1,5 @@
 //const parameters_promise = axios.get("http://localhost:3000/zbx/all");
-const parameters_promise = axios.get("http://hirasyain.link:3000/zbx/all");
+const parameters_promise = axios.get("https://hirasyain.link:3000/zbx/all");
 
 const left_version_selectbox = document.querySelector(".left_version_selectbox");
 const right_version_selectbox = document.querySelector(".right_version_selectbox");

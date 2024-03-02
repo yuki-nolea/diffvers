@@ -18,7 +18,7 @@ const updateNotice = async() =>
   const begin_ver = verSelectBox1.value;
   const end_ver = verSelectBox2.value;
   
-  const notices = (await axios.get("http://hirasyain.link:3000/zbx/notice/all")).data;
+  const notices = (await axios.get("https://hirasyain.link:3000/zbx/notice/all")).data;
 
   console.log("notices", notices);
   console.log("noticeContainer", noticeContainer);
