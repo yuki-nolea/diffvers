@@ -7,7 +7,6 @@ const router = express.Router();
 
 router.get('/zbx/all', async (req: any, res: any) => 
 {
-  console.log("e")
   const result = await tr.query("select * from parameters");
 
   //console.log(result);
