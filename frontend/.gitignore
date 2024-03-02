@@ -1,1 +1,5 @@
 app.js
+
+*.log
+logs/**
+!logs/.gitkeep
