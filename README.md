@@ -2,18 +2,21 @@
 
 # Running the app
 - アプリケーションの起動
+アプリケーションの起動は`<project root>/backend`にcdしてから実行すること
 ```
-# npx forever start <project root>/frontend/app.js
+# cd <project root>/backend
+# yarn run prod
+# forever ../frontend/app.js
 ```
 
 - アプリケーションの停止
+`forever list`コマンドで起動中のアプリケーションのIDを取得し、`forever stop`コマンドで取得したIDを指定し停止する
 ```
-# npx forever stop <project root>/frontend/app.js
-```
-
-- アプリケーションの再起動
-```
-# npx forever restart <project root>/frontend/app.js
+# forever list
+info:    Forever processes running
+data:    uid  command           script                                           forever pid  id    logfile                         uptime                
+data:    [0] AL2r /usr/bin/node /home/bitnami/hira-code/diffvers/frontend/app.js 2176186 2176196    /home/bitnami/.forever/AL2r.log 0:0:2:54.6450000000000
+# forever stop 0
 ```
 
 # Cloning the app
