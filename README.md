@@ -6,7 +6,7 @@
 ```
 # cd <project root>/backend
 # yarn run prod
-# forever ../frontend/app.js
+# forever start ../frontend/app.js
 ```
 
 - アプリケーションの停止
